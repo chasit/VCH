@@ -50,5 +50,11 @@
     <ClCompile Include="internet.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>
