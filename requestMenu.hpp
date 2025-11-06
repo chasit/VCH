@@ -11,10 +11,10 @@ using namespace std;
 using namespace EuroScopePlugIn;
 
 const string MY_PLUGIN_NAME = "VCH";
-const string MY_PLUGIN_VERSION = "0.8.6";
-const string MY_PLUGIN_DEVELOPER = "Jan Fries";
+const string MY_PLUGIN_VERSION = "0.8.7";
+const string MY_PLUGIN_DEVELOPER = "Chasit, Jan Fries";
 const string MY_PLUGIN_COPYRIGHT = "GPL v3";
-const string MY_PLUGIN_VIEW_AVISO = "Kleine Helferlein in Euroscope";
+const string MY_PLUGIN_VIEW_AVISO = "Virtual Controller Helper";
 
 struct requestBox {
 	char type{};

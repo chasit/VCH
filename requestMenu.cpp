@@ -48,8 +48,8 @@ CVCHPlugin::CVCHPlugin() : EuroScopePlugIn::CPlugIn(EuroScopePlugIn::COMPATIBILI
 	RegisterTagItemType("Reminder only when active", TAG_ITEM_VCH_SRM);
 	RegisterTagItemFunction("Switch Reminder", TAG_FUNC_VCH_REM);
 
-	RegisterTagItemType("CHECKBOX", TAG_ITEM_CHECKBOX);
-	RegisterTagItemFunction("ClickCheckbox", TAG_FUNC_CHECKBOX);
+	RegisterTagItemType("CTL Box only when active", TAG_ITEM_VCH_CTL_CHECKBOX);
+	RegisterTagItemFunction("Cleared For Takeoff Box", TAG_FUNC_VCH_CTL_CHECKBOX);
 
 	timerOn = clock();
 
@@ -412,7 +412,7 @@ void CVCHPlugin::OnGetTagItem(CFlightPlan flightPlan, CRadarTarget RadarTarget, 
 		}
 	}
 
-	if (ItemCode == TAG_ITEM_CHECKBOX) {
+	if (ItemCode == TAG_ITEM_VCH_CTL_CHECKBOX) {
 		if (flightPlan.IsValid() && isLanding(flightPlan.GetDistanceToDestination()) && RadarTarget.GetGS() >= speedCTL && getTracking(flightPlan.GetTrackingControllerIsMe())) {
 
 			string val = "";
@@ -423,7 +423,6 @@ void CVCHPlugin::OnGetTagItem(CFlightPlan flightPlan, CRadarTarget RadarTarget, 
 				val = "¤";
 			}
 			*pColorCode = TAG_WHITE;
-			//string val = checked_the_box ? "¤" : "¬";
 			strcpy_s(sItemString, 16, val.c_str());
 		}
 	}
@@ -691,7 +690,7 @@ void CVCHPlugin::OnFunctionCall(int FunctionId, const char* sItemString, POINT P
 		setHoldShort("", &flightPlan);
 	}
 
-	if (FunctionId == TAG_FUNC_VCH_CTL || FunctionId == TAG_FUNC_CHECKBOX) {
+	if (FunctionId == TAG_FUNC_VCH_CTL || FunctionId == TAG_FUNC_VCH_CTL_CHECKBOX) {
 		if (isClearedToLand(&flightPlan)) {
 			setClearedToLand(&flightPlan, false);	
 		} else {

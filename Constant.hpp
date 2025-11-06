@@ -36,6 +36,9 @@ const int TAG_ITEM_VCH_SCL = 641;
 const int TAG_ITEM_VCH_CFT = 642;
 const int TAG_FUNC_VCH_CTL = 650;
 
+const int TAG_ITEM_VCH_CTL_CHECKBOX = 651;
+const int TAG_FUNC_VCH_CTL_CHECKBOX = 652;
+
 const int TAG_ITEM_VCH_REM = 340;
 const int TAG_ITEM_VCH_SRM = 341;
 const int TAG_FUNC_VCH_REM = 346;
@@ -51,9 +54,6 @@ const int SEQ_NO_ZERO = 1;
 const int SEQ_LEAD_ZERO = 2;
 const int SEQ_TEN_ZERO = 3;
 
-
-const int TAG_ITEM_CHECKBOX = 700;
-const int TAG_FUNC_CHECKBOX = 701;
 
 
 
